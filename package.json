@@ -1,0 +1,71 @@
+{
+  "name": "node-static",
+  "version": "0.7.11",
+  "description": "simple, compliant file streaming module for node",
+  "author": "Alexis Sellier <alexis@cloudhead.io>",
+  "contributors": [
+    "Pablo Cantero <pablo@pablocantero.com>",
+    "Ionică Bizău <bizauionica@gmail.com>",
+    "Brett Zamir"
+  ],
+  "type": "module",
+  "main": "./lib/node-static.js",
+  "exports": {
+    ".": {
+      "import": "./lib/node-static.js",
+      "require": "./dist/node-static.cjs"
+    }
+  },
+  "license": "MIT",
+  "bin": {
+    "static": "bin/cli.js"
+  },
+  "keywords": [
+    "http",
+    "static",
+    "file",
+    "server"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/cloudhead/node-static"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "start": "./bin/cli.js",
+    "lint": "eslint --ext=cjs,js .",
+    "mocha": "mocha test/integration --parallel",
+    "test": "c8 npm run mocha"
+  },
+  "dependencies": {
+    "colors": "1.4.0",
+    "command-line-basics": "^1.0.2",
+    "mime": "^3.0.0",
+    "minimatch": "^5.0.1"
+  },
+  "c8": {
+    "exclude": [
+      "dist",
+      "test"
+    ]
+  },
+  "devDependencies": {
+    "c8": "^7.11.0",
+    "chai": "^4.3.6",
+    "eslint": "^8.10.0",
+    "mocha": "^9.2.1",
+    "node-fetch": "^2.6.6",
+    "rollup": "^2.70.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/cloudhead/node-static/issues"
+  },
+  "homepage": "https://github.com/cloudhead/node-static",
+  "directories": {
+    "example": "examples",
+    "test": "test"
+  }
+}
